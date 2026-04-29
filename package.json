@@ -1,7 +1,7 @@
 {
   "name": "staymaroc-backend",
   "version": "1.0.0",
-  "description": "API backend pour Baya House",
+  "description": "API backend pour Baya Apartment",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

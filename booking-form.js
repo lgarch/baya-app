@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const whatsappNumber = "212670805960"; 
         
-        let text = `Bonjour Baya House ⭐\n\n`;
+        let text = `Bonjour Baya Apartment ⭐\n\n`;
         text += `Je souhaite finaliser ma réservation :\n`;
         text += `Logement: ${reservationData.logementType} - ${reservationData.logementTitre}\n`;
         text += `Nom: ${reservationData.clientNom}\n`;

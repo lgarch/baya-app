@@ -1,5 +1,44 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log("Baya House loaded");
+  console.log("Baya Apartment loaded");
+
+  // ===== HAMBURGER MENU =====
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Fermer le menu quand on clique un lien (sauf dropdowns)
+    navMenu.querySelectorAll('a').forEach(link => {
+      if (!link.parentElement.classList.contains('dropdown')) {
+        link.addEventListener('click', () => {
+          hamburgerBtn.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      }
+    });
+
+    // Dropdowns mobiles : clic au lieu de hover
+    navMenu.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
+      dropdownToggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdownToggle.parentElement.classList.toggle('open');
+        }
+      });
+    });
+
+    // Fermer le menu si on clique en dehors
+    document.addEventListener('click', (e) => {
+      if (!hamburgerBtn.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburgerBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
 
   let logementsData = [];
 
