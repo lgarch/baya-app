@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayMaroc - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Stay<span>Maroc</span></div>
+
+  <nav class="nav">
+    <a href="index-en.html">Home</a>
+    <a href="appartements.html">Apartments</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="header-actions">
+    <a class="lang-btn" href="index.html">FR</a>
+    <a class="whatsapp-btn" href="https://wa.me/212670805960" target="_blank">WhatsApp</a>
+
+    <div class="menu-container">
+      <button class="menu-btn" onclick="toggleMenu()">⋮</button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Luxury Apartments in Témara</h1>
+    <p>Book modern and elegant apartments in a few seconds.</p>
+
+    <div class="search-box">
+      <form action="appartements.html">
+        <input type="text" placeholder="City (ex: Témara)" required>
+        <input type="date" required>
+        <input type="date" required>
+        <input type="number" placeholder="Guests" min="1" required>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="apartments-preview">
+  <h2>Popular Apartments</h2>
+  <p class="subtitle">Choose your favorite apartment</p>
+
+  <div class="apartments-grid">
+
+    <div class="apartment-card">
+      <img src="Images/app1.jpg" alt="Apartment 1">
+      <div class="card-info">
+        <h3>Apartment 1</h3>
+        <p>Témara - Luxury</p>
+        <a href="reservation.html?app=Appartement%201" class="gold-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="apartment-card">
+      <img src="Images/app2.jpg" alt="Apartment 2">
+      <div class="card-info">
+        <h3>Apartment 2</h3>
+        <p>Témara - Modern</p>
+        <a href="reservation.html?app=Appartement%202" class="gold-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="apartment-card">
+      <img src="Images/app3.jpg" alt="Apartment 3">
+      <div class="card-info">
+        <h3>Apartment 3</h3>
+        <p>Témara - Premium</p>
+        <a href="reservation.html?app=Appartement%203" class="gold-btn">Book Now</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="center-btn">
+    <a href="appartements.html" class="gold-btn">See all apartments</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-bottom">© 2026 StayMaroc - All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.menu-btn')) {
+    const dropdown = document.getElementById("dropdownMenu");
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+    }
+  }
+}
+</script>
+
+</body>
+</html>

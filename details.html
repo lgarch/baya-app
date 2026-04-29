@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails - Baya House ⭐</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">Baya House <span>⭐</span></div>
+
+  <nav>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="dropdown">
+        <a href="#">Propriétés ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="appartements.html">Appartements</a></li>
+          <li><a href="chambres.html">Chambres</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<section class="page-header">
+  <h1 id="logementTitle">Détails</h1>
+  <p id="logementVille">Informations sur le logement</p>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="details-card">
+      <div class="details-image-section">
+        <img id="mainImage" class="details-main-img" src="" alt="Image principale">
+      </div>
+
+      <div class="details-content">
+        <h2 id="logementTitre2"></h2>
+        <p id="logementDesc"></p>
+
+        <div class="big-card-buttons" style="margin-bottom: 20px;">
+          <a href="#" id="reserverBtn" class="btn">Réserver maintenant</a>
+          <button onclick="history.back()" class="btn secondary">Retour</button>
+        </div>
+
+        <h3 style="margin-top: 20px; font-size: 20px; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Galerie Photos</h3>
+        <div id="gallery" class="gallery"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-bottom">© 2026 Baya House ⭐ - Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="details.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

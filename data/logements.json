@@ -1,0 +1,236 @@
+[
+  {
+    "id": "app-1",
+    "type": "appartement",
+    "titre": "Appartement 1",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement luxueux, propre et moderne, parfait pour vacances ou travail.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-2",
+    "type": "appartement",
+    "titre": "Appartement 2",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement moderne et confortable, proche du centre avec équipements complets.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-3",
+    "type": "appartement",
+    "titre": "Appartement 3",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement élégant et bien équipé, parfait pour courts et longs séjours.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-4",
+    "type": "appartement",
+    "titre": "Appartement 4",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement haut standing avec design moderne.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-5",
+    "type": "appartement",
+    "titre": "Appartement 5",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement calme et propre, idéal pour vacances en famille.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-6",
+    "type": "appartement",
+    "titre": "Appartement 6",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement deluxe avec équipements premium.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-7",
+    "type": "appartement",
+    "titre": "Appartement 7",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement élégant et confortable.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-8",
+    "type": "appartement",
+    "titre": "Appartement 8",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement proche de la mer.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-9",
+    "type": "appartement",
+    "titre": "Appartement 9",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement spacieux dans quartier calme.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "app-10",
+    "type": "appartement",
+    "titre": "Appartement 10",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Appartement VIP design luxe.",
+    "image": "Images/apt10.png",
+    "gallery": [
+      "Images/apt10.png",
+      "Images/salon.png",
+      "Images/cuisine.png",
+      "Images/toilette.png"
+    ]
+  },
+  {
+    "id": "ch-1",
+    "type": "chambre",
+    "titre": "Chambre 1",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Chambre propre et moderne.",
+    "image": "Images/chambre1-1.jpg",
+    "gallery": [
+      "Images/chambre1-1.jpg"
+    ]
+  },
+  {
+    "id": "ch-2",
+    "type": "chambre",
+    "titre": "Chambre 2",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Chambre confortable et calme.",
+    "image": "Images/chambre1-1.jpg",
+    "gallery": [
+      "Images/chambre1-1.jpg"
+    ]
+  },
+  {
+    "id": "ch-3",
+    "type": "chambre",
+    "titre": "Chambre 3",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Chambre luxe élégante.",
+    "image": "Images/chambre1-1.jpg",
+    "gallery": [
+      "Images/chambre1-1.jpg"
+    ]
+  },
+  {
+    "id": "ch-4",
+    "type": "chambre",
+    "titre": "Chambre 4",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Chambre VIP premium.",
+    "image": "Images/chambre1-1.jpg",
+    "gallery": [
+      "Images/chambre1-1.jpg"
+    ]
+  },
+  {
+    "id": "ch-5",
+    "type": "chambre",
+    "titre": "Chambre 5",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Chambre proche plage.",
+    "image": "Images/chambre1-1.jpg",
+    "gallery": [
+      "Images/chambre1-1.jpg"
+    ]
+  },
+  {
+    "id": "ch-6",
+    "type": "chambre",
+    "titre": "Chambre 6",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Chambre moderne propre.",
+    "image": "Images/chambre1-1.jpg",
+    "gallery": [
+      "Images/chambre1-1.jpg"
+    ]
+  },
+  {
+    "id": "ch-7",
+    "type": "chambre",
+    "titre": "Chambre 7",
+    "ville": "Témara",
+    "status": "Disponible",
+    "description": "Chambre deluxe confortable.",
+    "image": "Images/chambre1-1.jpg",
+    "gallery": [
+      "Images/chambre1-1.jpg"
+    ]
+  }
+]

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appartements - Baya House</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">Baya House <span>⭐</span></div>
+
+  <nav>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="dropdown">
+        <a href="#" class="active">Propriétés ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="appartements.html">Appartements</a></li>
+          <li><a href="chambres.html">Chambres</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<section class="hero" style="min-height: 50vh; padding-top: 150px;">
+  <div class="hero-text">
+    <h1>Nos Appartements Premium</h1>
+    <p>Découvrez nos appartements luxueux disponibles au Maroc.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div id="appList" class="grid">
+      <!-- Les appartements seront injectés ici par JavaScript -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Baya House. Tous droits réservés.</p>
+</footer>
+
+<script src="data.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const list = document.getElementById("appList");
+  let logementsData = [];
+
+  try {
+    const response = await fetch('/api/logements');
+    if (response.ok) {
+      logementsData = await response.json();
+    } else {
+      throw new Error("Backend non disponible");
+    }
+  } catch (error) {
+    if (window.logements) {
+      logementsData = window.logements;
+    } else {
+      list.innerHTML = "<p>Erreur de chargement des données.</p>";
+      return;
+    }
+  }
+
+  const appartements = logementsData.filter(item => item.type === "appartement");
+  
+  if (appartements.length === 0) {
+    list.innerHTML = "<p>Aucun appartement disponible pour le moment.</p>";
+    return;
+  }
+
+  appartements.forEach(app => {
+    list.innerHTML += `
+      <div class="card">
+        <img src="${app.image}" alt="${app.titre}" loading="lazy" class="card-img" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;" onerror="this.src='https://via.placeholder.com/400x300?text=Image+Non+Disponible'">
+        
+        <h3>${app.titre}</h3>
+        <p>${app.description.length > 80 ? app.description.substring(0, 80) + '...' : app.description}</p>
+
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+          <a href="details.html?id=${app.id}" class="btn secondary btn-small" style="flex: 1; text-align: center;">Voir plus</a>
+          <a href="booking-form.html?id=${app.id}" class="btn btn-small" style="flex: 1; text-align: center;">Réserver</a>
+        </div>
+      </div>
+    `;
+  });
+});
+</script>
+
+</body>
+</html>

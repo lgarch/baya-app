@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Découvrez nos appartements et chambres premium au Maroc. Baya House vous propose des hébergements de luxe à Témara.">
+  <meta property="og:title" content="Baya House | Locations de Luxe">
+  <meta property="og:description" content="Expérience exclusive et appartements premium à Témara.">
+  <meta property="og:image" content="Images/chambre1-1.jpg">
+  <meta property="og:type" content="website">
+  <title>Baya House | Locations de Luxe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .whatsapp-effect-btn {
+      background-color: #25D366; /* Couleur officielle WhatsApp */
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      animation: pulse-wa 2s infinite;
+      text-decoration: none;
+    }
+    
+    .whatsapp-effect-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      color: white;
+    }
+
+    @keyframes pulse-wa {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Baya House <span>⭐</span></div>
+
+  <nav>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="appartements.html">Appartements</a></li>
+      <li><a href="chambres.html">Chambres</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Bienvenue chez <span>Baya House</span> ⭐</h1>
+    <p>Expérience exclusive • Luxe marocain • Appartements premium à Témara</p>
+    <div class="hero-buttons">
+      <a href="appartements.html" class="btn primary-btn">Découvrir nos appartements</a>
+      <a href="chambres.html" class="btn outline-btn">Voir nos chambres</a>
+      <a href="reservation.html" class="btn outline-btn">Réserver maintenant</a>
+    </div>
+  </div>
+</section>
+
+<!-- APARTMENTS (Aperçu) -->
+<section id="apartments" class="section">
+  <h2>Nos Appartements Premium</h2>
+  <div class="grid" id="featured-apartments">
+    <!-- Les appartements seront injectés ici par JavaScript -->
+  </div>
+  <div class="text-center" style="margin-top: 30px;">
+    <a href="appartements.html" class="btn secondary">Voir tous les appartements</a>
+  </div>
+</section>
+
+<!-- ROOMS (Aperçu) -->
+<section id="rooms" class="section dark">
+  <h2>Nos Chambres Privées</h2>
+  <div class="grid" id="featured-rooms">
+    <!-- Les chambres seront injectées ici par JavaScript -->
+  </div>
+  <div class="text-center" style="margin-top: 30px;">
+    <a href="chambres.html" class="btn secondary">Voir toutes les chambres</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <h2>Foire Aux Questions</h2>
+
+  <div class="faq-container">
+    <details class="faq-item">
+      <summary>Comment réserver un logement ?</summary>
+      <p>Cliquez sur le bouton "Réserver" qui vous redirigera vers WhatsApp pour une confirmation instantanée.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Le paiement s'effectue-t-il en ligne ?</summary>
+      <p>Non, le paiement s'effectue directement après la confirmation sur WhatsApp.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Les propriétés sont-elles toutes vérifiées ?</summary>
+      <p>Oui, toutes nos propriétés Baya House sont inspectées et prêtes à vous accueillir.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section dark" style="text-align: center;">
+  <h2>Contactez Baya House</h2>
+  <p>Pour une réservation rapide, contactez-nous directement via WhatsApp ou choisissez une propriété ci-dessus.</p>
+  <div style="margin-top: 30px;">
+    <a href="https://wa.me/212670805960" target="_blank" class="btn whatsapp-effect-btn">
+      <span style="font-size: 20px; margin-right: 8px;">💬</span> Contactez-nous sur WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Baya House. Tous droits réservés.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

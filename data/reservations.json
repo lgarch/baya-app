@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Appartement",
+    "name": "dd",
+    "phone": "0684866985",
+    "checkin": "2027-05-21",
+    "checkout": "2027-05-22",
+    "people": "1",
+    "message": "",
+    "dateDemande": "2026-04-24T01:53:06.241Z"
+  },
+  {
+    "type": "Appartement",
+    "name": "g",
+    "phone": "g",
+    "checkin": "2026-04-10",
+    "checkout": "2026-04-11",
+    "people": "1",
+    "message": "t",
+    "dateDemande": "2026-04-24T02:35:16.579Z"
+  }
+]

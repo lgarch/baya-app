@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire de Réservation - Baya House ⭐</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    .booking-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .booking-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .booking-header h2 {
+      color: var(--primary-color);
+      font-family: 'Playfair Display', serif;
+    }
+    .property-summary {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    .property-summary img {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .property-details h3 {
+      margin: 0 0 5px 0;
+      font-size: 18px;
+    }
+    .property-details p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(184,134,11,0.2);
+    }
+    .row {
+      display: flex;
+      gap: 20px;
+    }
+    .col {
+      flex: 1;
+    }
+    @media (max-width: 600px) {
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .property-summary {
+        flex-direction: column;
+        text-align: center;
+      }
+      .property-summary img {
+        width: 100%;
+        height: 150px;
+      }
+    }
+    .led-green {
+      width: 16px;
+      height: 16px;
+      background-color: #28a745;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #28a745;
+      animation: pulse-green 1.5s infinite;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+    }
+    
+    /* Forcer l'affichage des dates disponibles en noir dans Flatpickr */
+    .flatpickr-day:not(.flatpickr-disabled) {
+      color: #000000 !important;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">Baya House <span>⭐</span></div>
+
+    <nav>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="appartements.html">Appartements</a></li>
+        <li><a href="chambres.html">Chambres</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    
+  </header>
+
+  <section class="page-header" style="padding-top: 120px; text-align: center; margin-bottom: 0;">
+    <h1 style="font-size: 40px; background: linear-gradient(to right, #fff, #a0a0a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Finaliser la réservation
+    </h1>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="booking-container">
+        
+        <div class="booking-header">
+          <h2>Vos informations</h2>
+          <p style="color: var(--text-muted);">Veuillez remplir ce formulaire pour valider votre demande.</p>
+        </div>
+
+        <div class="property-summary" id="property-summary">
+          <!-- Injecté par JS -->
+          <p>Chargement du logement...</p>
+        </div>
+
+        <div id="unavailable-dates-message" style="display: none; padding: 15px; background: #fff3cd; color: #856404; border: 1px solid #ffeeba; border-radius: 8px; margin-bottom: 25px; font-size: 15px; display: flex; align-items: center; gap: 15px;">
+          <div class="led-green"></div>
+          <div>
+            <strong>Dates indisponibles :</strong> <span id="unavailable-dates-list"></span>
+          </div>
+        </div>
+
+        <form id="booking-form">
+          <input type="hidden" id="logementId" name="logementId">
+          <input type="hidden" id="logementTitre" name="logementTitre">
+          <input type="hidden" id="logementType" name="logementType">
+
+          <div class="form-group">
+            <label for="fullName">Nom complet</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Ex: Jean Dupont">
+          </div>
+
+          <div class="row">
+            <div class="col form-group">
+              <label for="email">Email (optionnel)</label>
+              <input type="email" id="email" name="email" placeholder="Ex: jean@example.com">
+            </div>
+            <div class="col form-group">
+              <label for="phone">Numéro de téléphone</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Ex: +212 6 00 00 00 00">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col form-group">
+              <label for="checkin">Date d'arrivée</label>
+              <input type="text" id="checkin" name="checkin" required placeholder="Sélectionnez une date">
+            </div>
+            <div class="col form-group">
+              <label for="checkout">Date de départ</label>
+              <input type="text" id="checkout" name="checkout" required placeholder="Sélectionnez une date">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Nombre de personnes</label>
+            <input type="number" id="guests" name="guests" min="1" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Demandes spéciales (optionnel)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Avez-vous des besoins particuliers ?"></textarea>
+          </div>
+
+          <button type="submit" class="btn primary-btn full-width" style="margin-top: 10px;">Confirmer et envoyer sur WhatsApp</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Baya House ⭐ - Tous droits réservés.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
+  
+  <script type="module" src="booking-form.js"></script>
+
+</body>
+
+</html>
