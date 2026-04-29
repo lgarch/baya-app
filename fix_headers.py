@@ -7,7 +7,7 @@ files_to_fix = [
 ]
 
 replacement = """<header class="navbar">
-  <div class="logo">Baya House <span>⭐</span></div>
+  <div class="logo">Baya Apartment <span>⭐</span></div>
 
   <nav>
     <ul class="nav-links" id="nav-menu">
