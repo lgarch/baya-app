@@ -58,6 +58,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     minDate: "today",
     disable: [],
     locale: "fr",
+    onDayCreate: function(dObj, dStr, fp, dayElem) {
+      if (dayElem.classList.contains('flatpickr-disabled')) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (dayElem.dateObj < today) {
+          dayElem.setAttribute('title', 'Date passée');
+        } else {
+          dayElem.setAttribute('title', 'Déjà réservé');
+        }
+      }
+    },
     onChange: function(selectedDates, dateStr, instance) {
       if (selectedDates.length > 0) {
         checkoutPicker.set('minDate', dateStr);
@@ -80,7 +91,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     dateFormat: "Y-m-d",
     minDate: "today",
     disable: [],
-    locale: "fr"
+    locale: "fr",
+    onDayCreate: function(dObj, dStr, fp, dayElem) {
+      if (dayElem.classList.contains('flatpickr-disabled')) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (dayElem.dateObj < today) {
+          dayElem.setAttribute('title', 'Date passée');
+        } else {
+          dayElem.setAttribute('title', 'Déjà réservé');
+        }
+      }
+    }
   });
 
   // --- Récupération des dates bloquées depuis Firebase ---
